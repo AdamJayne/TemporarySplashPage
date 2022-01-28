@@ -19,12 +19,33 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
+      flex-direction: column;
     }
     .prompt {
       animation-name: rainbow;
       animation-duration: 5s;
       animation-direction: alternate-reverse;
       animation-iteration-count: infinite;
+    }
+    .prompt-mobile {
+      display: none;
+    }
+    @media screen and (max-width: 615px) {
+      pre {
+        font-size: 0.5rem;
+      }
+      .prompt {
+        color: black;
+        animation:none;
+      }
+      .prompt-mobile {
+        font-family: monospace;
+        animation-name: rainbow;
+        animation-duration: 5s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+        display: initial;
+      }
     }
     @keyframes rainbow {
       0% {
@@ -56,6 +77,7 @@
 </head>
 <body>
   <div class="container">
+    <span class="prompt-mobile">➜ ~ echo "Hey, I'm Adam! I like to code!"</span>
     <pre>
              ____________________________________________________
             /                                                    \
@@ -87,6 +109,9 @@
 `---._.-----------------------------------------------------------------._.---'
 
   </pre>
+  </div>
+  <div class="container-mobile">
+    
   </div>
 
   <script>
